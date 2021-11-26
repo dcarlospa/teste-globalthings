@@ -1,0 +1,29 @@
+ion-content {
+  ion-list {
+    background-color: transparent;
+
+    ion-item {
+      margin-top: 1rem;
+      border-radius: 1rem;
+      --background: linear-gradient(150deg, #ff0000, #ffff00) !important;
+
+      ion-thumbnail {
+        img {
+          object-fit: contain;
+        }
+      }
+
+      ion-label {
+        h2 {
+          font-size: 1.8rem;
+          color: var(--ion-color-light);
+        }
+
+        ion-note {
+          opacity: 0.9;
+          color: var(--ion-color-light);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Heróis
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <app-responsive-container>
+    <ion-button color="danger" expand="block" size="large" [routerLink]="['add-hero']">
+      Adicionar Herói
+    </ion-button>
+
+    <ion-list *ngIf="heroes">
+      <ion-item *ngFor="let hero of heroes" lines="none">
+        <ion-thumbnail slot="start">
+          <img src="assets/logo.png">
+        </ion-thumbnail>
+
+        <ion-label>
+          <h2>ID: {{hero.Id}}</h2>
+          <h2>{{hero.Name | titlecase}}</h2>
+          <ion-note>
+            {{hero.Active ? 'Ativo' : 'Inativo'}}
+          </ion-note>
+        </ion-label>
+        <ion-icon name="trash" color="danger" slot="end" (click)="deleteHero(hero.Id)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </app-responsive-container>
+</ion-content>

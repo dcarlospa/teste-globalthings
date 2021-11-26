@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="tabs/heroes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar Herói</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-responsive-container>
+    <form [formGroup]="heroForm" (ngSubmit)="addHero(heroForm.value)">
+      <app-input-field label="Nome do herói" formControlName="Name" [control]="heroForm.get('Name')">
+      </app-input-field>
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-label position="stacked">Categoria</ion-label>
+        <ion-select formControlName="CategoryId" okText="Okay" cancelText="Cancelar">
+          <ion-select-option *ngFor="let category of categories" [value]="category.Id">
+            {{category.Name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-note *ngIf="!categories" color="danger">Sem categorias cadastradas</ion-note>
+
+      <ion-list>
+        <ion-radio-group formControlName="Active">
+          <ion-list-header>
+            <ion-label>
+              Herói Ativo?
+            </ion-label>
+          </ion-list-header>
+
+          <ion-item lines="none">
+            <ion-label>Sim</ion-label>
+            <ion-radio slot="end" [value]="true"></ion-radio>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label>Não</ion-label>
+            <ion-radio slot="end" [value]="false"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-button class="ion-margin-top" type="submit" color="danger" expand="block" size="large"
+        [disabled]="heroForm.invalid">
+        Adicionar
+      </ion-button>
+    </form>
+  </app-responsive-container>
+</ion-content>

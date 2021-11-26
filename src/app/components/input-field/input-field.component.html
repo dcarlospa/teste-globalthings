@@ -1,0 +1,9 @@
+<ion-item>
+  <ion-label [position]="position">
+    {{label}} <ion-note color="danger" *ngIf="required">*</ion-note>
+  </ion-label>
+  <ion-input [type]="type" [(ngModel)]="value" spellcheck="false" (ionBlur)="onTouchCallback($event)">
+  </ion-input>
+
+  <app-error-message [control]="control" [label]="label"></app-error-message>
+</ion-item>

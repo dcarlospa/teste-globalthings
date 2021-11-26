@@ -1,0 +1,32 @@
+ion-content {
+  ion-list {
+    background: transparent;
+
+    ion-list-header {
+      padding: 0;
+      font-weight: 700;
+    }
+
+    ion-item {
+      ion-radio {
+        --color-checked: var(--ion-color-danger);
+        --color: var(--ion-color-danger);
+      }
+    }
+  }
+
+  ion-item {
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+
+    ion-label {
+      margin-bottom: 0.7rem;
+      color: var(--ion-color-dark) !important;
+      font-weight: 700;
+    }
+  }
+
+  ion-note {
+    font-weight: 700;
+  }
+}

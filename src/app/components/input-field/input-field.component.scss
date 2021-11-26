@@ -1,0 +1,27 @@
+ion-item {
+  --border-width: 0;
+  --padding-start: 0;
+  --highlight-height: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+
+  ion-label {
+    margin-bottom: 0.7rem;
+    color: var(--ion-color-dark) !important;
+    font-weight: 700;
+  }
+
+  ion-input {
+    min-height: 4.7rem;
+    --background: #fff;
+    border-radius: 1rem;
+    --padding-start: 1rem;
+  }
+
+  ion-icon {
+    position: absolute;
+    right: 1.3rem;
+    top: 3.4rem;
+    z-index: 10;
+  }
+}
